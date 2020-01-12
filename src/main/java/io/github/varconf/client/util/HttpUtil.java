@@ -1,19 +1,14 @@
 package io.github.varconf.client.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
 
 public class HttpUtil {
-
-    private static final Logger logger = LoggerFactory.getLogger(HttpUtil.class);
-
-    public static String get(String url) {
+    public static String get(String url) throws IOException {
         BufferedReader reader = null;
         try {
             URL uri = new URL(url);
@@ -30,21 +25,20 @@ public class HttpUtil {
                 result += line;
             }
             return result;
-        } catch (Exception e) {
-            logger.error("get error!", e);
+        } catch (IOException e) {
+            throw e;
         } finally {
             try {
                 if (reader != null) {
                     reader.close();
                 }
-            } catch (Exception ex) {
-                logger.error("get close stream error!", ex);
+            } catch (IOException ex) {
+                throw ex;
             }
         }
-        return null;
     }
 
-    public static String post(String url, String body) {
+    public static String post(String url, String body) throws IOException {
         PrintWriter writer = null;
         BufferedReader reader = null;
         try {
@@ -67,8 +61,8 @@ public class HttpUtil {
                 result += line;
             }
             return result;
-        } catch (Exception e) {
-            logger.error("post error!", e);
+        } catch (IOException e) {
+            throw e;
         } finally {
             try {
                 if (writer != null) {
@@ -77,10 +71,9 @@ public class HttpUtil {
                 if (reader != null) {
                     reader.close();
                 }
-            } catch (Exception ex) {
-                logger.error("post close stream error!", ex);
+            } catch (IOException ex) {
+                throw ex;
             }
         }
-        return null;
     }
 }
