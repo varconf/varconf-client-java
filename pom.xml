@@ -28,10 +28,10 @@
 
     <licenses>
         <license>
-            <name>Apache 2</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <name>MIT License</name>
+            <url>https://github.com/varconf/varconf-client-java/blob/master/LICENSE</url>
             <distribution>repo</distribution>
-            <comments>A business-friendly OSS license</comments>
+            <comments>A business-friendly license</comments>
         </license>
     </licenses>
 
