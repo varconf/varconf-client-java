@@ -8,7 +8,11 @@
 ## 使用步骤
 ### Maven
 ```
-TODO
+<dependency>
+  <groupId>io.github.varconf</groupId>
+  <artifactId>client</artifactId>
+  <version>1.0.0</version>
+</dependency>
 ```
 ### 配置步骤
 `1.Spring中xml配置客户端（能够自动注入Spring上下文配置）`
