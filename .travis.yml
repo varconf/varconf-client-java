@@ -4,4 +4,5 @@ jdk:
   - openjdk8
   
 script:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dmaven.gpg.skip=true
   - mvn clean package -DskipTests=true -Dmaven.javadoc.skip=true -Dmaven.gpg.skip=true
